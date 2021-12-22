@@ -7,8 +7,14 @@
   <%end %>
 
   <% @users.each do |user| %>
-    <p>
-      <%= link_to user.username, profile_path(user.username) %>
-    </p>
+    <div>
+      <p>
+        <%= link_to user.username, profile_path(user.username) %>
+        <% if user.username != current_user.username %>
+          <%= link_to "Add Friend", friend_requests_path(user_id: user.id), method: :post, class: "btn" %>
+        <% end %>  
+      </p>
+      
+    </div>
   <% end %>
 </div>
