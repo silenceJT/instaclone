@@ -7,6 +7,12 @@
     <% end %>
   </p>
 
+  <div>
+    <p>Total friends: 
+      <%= @user.friends.count %>
+    </p>
+  </div>
+
   <% if @user.photos.empty? %>
     <p>There is still no photos to display.</p>
   <% else %>
