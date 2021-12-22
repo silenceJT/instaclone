@@ -9,6 +9,8 @@
     <span> | </span>
     <%= link_to 'Friend requests', friend_requests_path %>
     <span> | </span>
+    <%= link_to 'Friend list', friends_path(current_user.username) %>
+    <span> | </span>
     <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
   <% else %>
     <%= link_to('Login', new_user_session_path) %>

@@ -17,6 +17,8 @@ Rails.application.routes.draw do
     post :decline
   end
 
+  get 'friends/:username', to: 'friends#show', as: :friends
+
   root 'photos#index'
 
   get '*path', to: 'photos#index', constraints: lambda { |req| req.path.exclude? 'rails/active_storage' }
