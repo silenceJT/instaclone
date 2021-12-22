@@ -1,0 +1,8 @@
+<div>Friends Requests</div>
+<div>
+	<% @friend_requests.each do |request| %>
+		<%= request.username %>
+		<%= link_to "Accept", friend_request_accept_path(request), method: :post, class: "btn" %>
+		<%= link_to "Decline", friend_request_decline_path(request), method: :post, class: "btn" %>
+	<% end %>
+</div>

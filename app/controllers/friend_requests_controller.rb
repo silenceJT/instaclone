@@ -17,7 +17,7 @@ class FriendRequestsController < ApplicationController
 		redirect_to profiles_path, notice: "Accepted request from #{user.username}"
 	end
 
-	def accept
+	def decline
 		user = User.find(params[:friend_request_id])
 		current_user.decline_request(user)
 

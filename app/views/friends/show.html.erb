@@ -1,0 +1,9 @@
+<div>
+	<%= current_user %>'s Friends:
+</div>
+
+<div>
+	<% current_user.friends.each do |f| %>
+		<p><%= f.username %></p>
+		<%= link_to "View Profile", profile_path(f.username), class: "btn" %>
+</div>
