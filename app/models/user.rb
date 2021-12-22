@@ -8,6 +8,7 @@ class User < ApplicationRecord
 
   validates :username, presence: true, uniqueness: {case_sensitive: false}
 
+	has_friendship
   has_many :photos, dependent: :delete_all
   has_many :comments, dependent: :delete_all
 end
